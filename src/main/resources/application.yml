@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    bootstrap-servers:
+      - "b-1.democluster2.66tmcl.c4.kafka.ap-northeast-2.amazonaws.com:9098"
+      - "b-3.democluster2.66tmcl.c4.kafka.ap-northeast-2.amazonaws.com:9098"
+      - "b-2.democluster2.66tmcl.c4.kafka.ap-northeast-2.amazonaws.com:9098"
+    consumer:
+      group-id: my-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
