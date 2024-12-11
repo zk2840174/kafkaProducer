@@ -32,7 +32,9 @@ dependencies {
     testImplementation 'org.springframework.kafka:spring-kafka-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    implementation 'software.amazon.msk:kafka-iam-auth:1.0.0'
+// https://mvnrepository.com/artifact/software.amazon.msk/aws-msk-iam-auth
+    implementation 'software.amazon.msk:aws-msk-iam-auth:2.2.0'
+
 }
 
 tasks.named('test') {
