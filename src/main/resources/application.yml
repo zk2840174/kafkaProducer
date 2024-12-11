@@ -1,9 +1,9 @@
 spring:
   kafka:
     bootstrap-servers:
-      - "b-1.democluster2.66tmcl.c4.kafka.ap-northeast-2.amazonaws.com:9098"
-      - "b-3.democluster2.66tmcl.c4.kafka.ap-northeast-2.amazonaws.com:9098"
-      - "b-2.democluster2.66tmcl.c4.kafka.ap-northeast-2.amazonaws.com:9098"
+      - "b-3.democluster3.petfyf.c4.kafka.ap-northeast-2.amazonaws.com:9098"
+      - "b-2.democluster3.petfyf.c4.kafka.ap-northeast-2.amazonaws.com:9098"
+      - "b-1.democluster3.petfyf.c4.kafka.ap-northeast-2.amazonaws.com:9098"
     consumer:
       group-id: my-group
       auto-offset-reset: earliest
@@ -12,3 +12,8 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    properties:
+      security.protocol: SASL_SSL
+      sasl.mechanism: AWS_MSK_IAM
+      sasl.jaas.config: software.amazon.msk.auth.iam.IAMLoginModule required;
+      sasl.client.callback.handler.class: software.amazon.msk.auth.iam.IAMClientCallbackHandler
