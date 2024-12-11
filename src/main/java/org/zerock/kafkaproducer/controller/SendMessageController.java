@@ -29,7 +29,7 @@ public class SendMessageController {
 
         log.info("------------------------------");
 
-        kafkaProducerService.sendMessage("sample_topic", msg);
+        kafkaProducerService.sendMessage("MSKTutorialTopic", msg);
 
         return new String[] {msg, "sent"};
 
